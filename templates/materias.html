@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Curso</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='materias.css') }}">
+</head>
+<body>
+    <header>
+        <h1>{{ curso.Titulo }}</h1>
+        <h2>Nível: Ensino {{ curso.Nivel }}</h2>
+        <h3>Matérias</h3>
+    </header>
+    
+
+    <main>
+        <ul>
+            {% for materia in materias %}
+                <li>{{ materia.Titulo }} - Professor(a): {{ materia.professor_nome }}</li>
+            {% endfor %}
+        </ul>
+    </main>
+    
+</body>
+</html>
